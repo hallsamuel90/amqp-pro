@@ -1,0 +1,11 @@
+{
+  "name": "amqp-pro",
+  "version": "1.0.0",
+  "description": "ampq client with built-in reconnect",
+  "main": "build/amqp-pro.js",
+  "author": "hallsamuel90",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.6.0"
+  }
+}
