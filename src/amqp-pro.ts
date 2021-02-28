@@ -1,5 +1,5 @@
 import amqplib from 'amqplib';
-import { AmpqProError } from './errors';
+import { AmqpProError } from './errors';
 import { Channel, Connection } from './types';
 
 const DEFAULT_RECONNECT_INTERVAL = 2;
@@ -11,7 +11,7 @@ export async function connect(
   remainingAttempts: number = DEFAULT_ATTEMPTS
 ): Promise<Connection> {
   if (!remainingAttempts) {
-    throw new AmpqProError(
+    throw new AmqpProError(
       `🔥 failed to connect to ${amqpUri} in ${remainingAttempts} tries. Please 
         verify the uri or increase the number of retries.`
     );
@@ -24,7 +24,6 @@ export async function connect(
       not available or ${amqpUri} is not a valid address, 💪 Retrying in
       ${reconnectInterval} seconds...`);
 
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     await sleep(reconnectInterval);
 
     return connect(amqpUri, reconnectInterval);
@@ -43,7 +42,7 @@ export async function createChannel(
   } catch (e) {
     console.error('🔥 ' + e);
 
-    throw new AmpqProError(`🔥 could not create channel ${channelName}`);
+    throw new AmqpProError(`🔥 could not create channel ${channelName}`);
   }
 }
 
