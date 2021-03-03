@@ -14,10 +14,11 @@
       "pretty": true,
       "sourceMap": true,
       "strictNullChecks": true,
-      "outDir": "./build",
+      "outDir": "./dist",
       "allowJs": true,
       "noEmit": false,
       "esModuleInterop": true,
+      "declaration": true,
     },
     "include": [
       "./src/**/*"
