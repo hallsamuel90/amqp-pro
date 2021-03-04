@@ -11,5 +11,5 @@ describe('amqp-pro should', () => {
     expect(connection.connection.serverProperties.product).toEqual('RabbitMQ');
 
     await connection.close();
-  }, 20 * 1000);
+  }, 30 * 1000);
 });
