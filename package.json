@@ -1,11 +1,20 @@
 {
   "name": "amqp-pro",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A high-level amqp client with built-in reconnect",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "hallsamuel90",
   "license": "MIT",
+  "homepage": "https://github.com/hallsamuel90/amqp-pro#readme",
+  "keywords": [
+    "amqp",
+    "rabbitmq",
+    "queue"
+  ],
   "dependencies": {
     "amqplib": "^0.6.0"
   },
