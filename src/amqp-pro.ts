@@ -49,11 +49,11 @@ export async function createChannel(
 export async function subscribe(
   channel: Channel,
   channelName: string,
-  callback: Function
+  handler: Function
 ): Promise<void> {
   channel.consume(channelName, async (message) => {
     if (message != null) {
-      await callback(JSON.parse(message.content.toString()));
+      await handler(JSON.parse(message.content.toString()));
       channel.ack(message);
     }
   });
