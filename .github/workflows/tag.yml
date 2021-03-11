@@ -17,7 +17,7 @@ jobs:
         uses: salsify/action-detect-and-tag-new-version@v2
   
   publish:
-    if: ${{ steps.tag.outputs.tag }}
+    if: ${{ jobs.tag.outputs.tag }}
     runs-on: ubuntu-latest
     steps: 
       - name: Install
