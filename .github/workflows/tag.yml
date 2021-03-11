@@ -15,24 +15,21 @@ jobs:
       - name: Tag
         id: tag
         uses: salsify/action-detect-and-tag-new-version@v2
-  
-  publish:
-    runs-on: ubuntu-latest
-    steps: 
+        
       - name: Install
-        if: jobs.tag.outputs.tag
+        if: steps.tag.outputs.tag
         run: yarn install
       
       - name: CI Double Check
-        if: jobs.tag.outputs.tag
+        if: steps.tag.outputs.tag
         run: yarn ci
 
       - name: Build
-        if: jobs.tag.outputs.tag
+        if: steps.tag.outputs.tag
         run: yarn build
 
       - name: Publish
-        if: jobs.tag.outputs.tag
+        if: steps.tag.outputs.tag
         run: echo "publishing release ${{ steps.tag.outputs.tag }} " && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
