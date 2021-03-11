@@ -1,6 +1,6 @@
 {
   "name": "amqp-pro",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A high-level amqp client with built-in reconnect",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
