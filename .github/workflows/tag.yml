@@ -20,19 +20,19 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Install
-        if: steps.tag.outputs.tag
+        if: jobs.tag.outputs.tag
         run: yarn install
       
       - name: CI Double Check
-        if: steps.tag.outputs.tag
+        if: jobs.tag.outputs.tag
         run: yarn ci
 
       - name: Build
-        if: steps.tag.outputs.tag
+        if: jobs.tag.outputs.tag
         run: yarn build
 
       - name: Publish
-        if: steps.tag.outputs.tag
+        if: jobs.tag.outputs.tag
         run: echo "publishing release ${{ steps.tag.outputs.tag }} " && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
