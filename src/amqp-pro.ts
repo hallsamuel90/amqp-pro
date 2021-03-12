@@ -20,7 +20,7 @@ export async function connect(
   try {
     return await amqplib.connect(amqpUri);
   } catch (e) {
-    console.error(`🔥 Something went wrong, it is likely the message broker is
+    console.warn(`⚠️ Something went wrong, it is likely the message broker is
       not available or ${amqpUri} is not a valid address, 💪 Retrying in
       ${reconnectInterval} seconds...`);
 
